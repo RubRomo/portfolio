@@ -1,9 +1,12 @@
 const About = () => {
   return (
-    <section id="about" className="d-flex align-items-center bg-dark bg-gradient text-white">
+    <section
+      id="about"
+      className="d-flex align-items-center bg-dark bg-gradient text-white py-5"
+    >
       <div className="container">
         <div className="row d-flex align-content-center">
-          <h2 className="text-center mb-4">About me</h2>          
+          <h2 className="text-center mb-4">About me</h2>
           <p className="text-desc">
             I am a developer with 5 years of experience 👨‍💻, my favorite
             programming language is JavaScript 💻 but I also have experience in

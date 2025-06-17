@@ -17,9 +17,9 @@ import selleniumLogo from "../assets/images/skills/sellenium-logo.png";
 
 const Skills = () => {
   return (
-    <section id="skills" className="d-flex align-items-center">
+    <section id="skills" className="d-flex align-items-center py-5">
       <div className="container">
-        <h2 className="text-center">Skills</h2>
+        <h2 className="text-center mb-4">Skills</h2>
         <div className="row">
           <SkillItem urlImg={htmlLogo} name="HTML" />
           <SkillItem urlImg={cssLogo} name="CSS" />
