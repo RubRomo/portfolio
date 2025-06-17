@@ -1,0 +1,72 @@
+html {
+  font-size: 24px;
+}
+
+nav {
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.bg-dark-low {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.bg-dark-mid {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.navbar-brand {
+  color: whitesmoke;
+}
+
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+}
+
+h2 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "Jura";
+  font-weight: 400;
+}
+
+section {
+  min-height: 100vh;
+}
+
+.hero-logo {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+}
+
+.bg-colorful-gradient {
+  background-image: linear-gradient(
+    to right top,
+    #00c1ff,
+    #3bbcfc,
+    #55b7f9,
+    #67b3f4,
+    #76aeef,
+    #7d9ad6,
+    #7e87bd,
+    #7b75a3,
+    #665473,
+    #4a3748,
+    #291e24,
+    #000000
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.social-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25rem;
+}
