@@ -86,24 +86,24 @@ const Navbar2 = () => {
           </div>
           <div className="offcanvas-body">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" href="#">
-                  Home <span className="sr-only">(current)</span>
+              <li className="nav-item" data-bs-dismiss="offcanvas">
+                <a className="nav-link active" href="#hero">
+                  Home
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
+              <li className="nav-item" data-bs-dismiss="offcanvas">
+                <a className="nav-link" href="#about">
+                  About
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
+              <li className="nav-item" data-bs-dismiss="offcanvas">
+                <a className="nav-link" href="#skills">
+                  Skills
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="#">
-                  Disabled
+              <li className="nav-item" data-bs-dismiss="offcanvas">
+                <a className="nav-link disabled" href="#projects">
+                  Projects
                 </a>
               </li>
             </ul>
