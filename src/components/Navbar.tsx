@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Navbar2 = () => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const Navbar2 = () => {
                 </a>
               </li>
               <li className="nav-item" data-bs-dismiss="offcanvas">
-                <a className="nav-link disabled" href="#projects">
+                <a className="nav-link" href="#projects">
                   Projects
                 </a>
               </li>
@@ -114,4 +114,4 @@ const Navbar2 = () => {
   );
 };
 
-export default Navbar2;
+export default Navbar;

@@ -1,4 +1,4 @@
-import "../styles/Items.css";
+import "../styles/Skills.css";
 import htmlLogo from "../assets/images/skills/html-logo.png";
 import cssLogo from "../assets/images/skills/css-logo.png";
 import javascriptLogo from "../assets/images/skills/javascript-logo.png";
