@@ -26,7 +26,7 @@ const Projects = () => {
     >
       <div className="container" id="projects-container">
         <h2 className="text-center pb-4">Projects</h2>
-        <div className="row align-items-stretch">
+        <div className="row align-items-stretch g-4">
           <ProjectCard
             urlImg={mealFinderImg}
             title="Meal Finder"
