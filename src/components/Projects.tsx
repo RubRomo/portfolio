@@ -84,52 +84,61 @@ const ProjectCard = ({
   technologies,
   gitHubUrl,
   liveDemoUrl,
-}: Props) => (
-  <div className="col-md-4 d-flex">
-    <div
-      className="card cursor-pointer rounded p-2 p-md-3"
-      style={{ backgroundColor: "#343a40", fontSize: "16px" }}
-    >
-      <img src={urlImg} className="w-100 rounded" alt={`${title} preview`} />
-      <div className="text-white pt-2">
-        <h4>{title}</h4>
+}: Props) => {
+  const techsToCheck: TechName[] = ["java", "mysql"];
 
-        <p className="">{description}</p>
-        <div className="d-flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <img
-              className=""
-              key={tech}
-              src={techIcons[tech]}
-              alt={tech}
-              style={{ height: "6vh" }}
-            />
-          ))}
+  return (
+    <div className="col-md-4 d-flex">
+      <div
+        className="card cursor-pointer rounded p-2 p-md-3"
+        style={{ fontSize: "16px" }}
+      >
+        <img src={urlImg} className="w-100 rounded" alt={`${title} preview`} />
+        <div className="text-white pt-2">
+          <h4>{title}</h4>
+
+          <p className="">{description}</p>
+          <div className="d-flex flex-wrap gap-2">
+            {technologies.map(function (tech) {
+              const iconClass = techsToCheck.includes(tech)
+                ? "bg-light rounded p-1"
+                : "";
+              return (
+                <img
+                  className={iconClass}
+                  key={tech}
+                  src={techIcons[tech]}
+                  alt={tech}
+                  style={{ height: "6vh" }}
+                />
+              );
+            })}
+          </div>
         </div>
-      </div>
-      <div className="d-flex flex-column justify-content-end mt-auto text-white">
-        <hr className="text-white my-2" />
-        <div className="d-flex justify-content-end gap-3">
-          <a
-            className="text-decoration-none"
-            href={gitHubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-          <a
-            className="text-decoration-none"
-            href={liveDemoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live Demo
-          </a>
+        <div className="d-flex flex-column justify-content-end mt-auto text-white">
+          <hr className="text-white my-2" />
+          <div className="d-flex justify-content-end gap-3">
+            <a
+              className="text-decoration-none"
+              href={gitHubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              className="text-decoration-none"
+              href={liveDemoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live Demo
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Projects;
