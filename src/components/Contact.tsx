@@ -1,14 +1,22 @@
 import contactMeLogo from "../assets/images/contact-logo.png";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Popup from "./Popup";
 
 const Contact = () => {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
+  const [sending, setSending] = useState(false);
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
   const sendEmail = (event: React.FormEvent) => {
     event.preventDefault();
+    setSending(true);
+
     const params = {
       name: nameRef.current?.value,
       email: emailRef.current?.value,
@@ -28,6 +36,8 @@ const Contact = () => {
         [nameRef, emailRef, messageRef].forEach((ref) => {
           if (ref.current) ref.current.value = "";
         });
+        setSending(false);
+        setShow(true);
         console.log(res);
       })
       .catch((err) => {
@@ -95,14 +105,24 @@ const Contact = () => {
                 ></textarea>
               </div>
               <div className="text-center pt-2">
-                <button type="submit" className="btn btn-sm btn-dark">
-                  Send Message
+                <button
+                  type="submit"
+                  name="submitbtn"
+                  className="btn btn-sm btn-dark"
+                  disabled={sending}
+                >
+                  {sending ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <Popup
+        show={show}
+        handleClose={handleClose}
+        message="Message has been sent !"
+      />
     </section>
   );
 };
