@@ -62,6 +62,11 @@ const Navbar = () => {
                 Projects
               </a>
             </li>
+            <li className="nav-item mx-2">
+              <a className="nav-link" href="#contact">
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
         {/* Offcanvas menu: visible on mobile only */}
@@ -104,6 +109,11 @@ const Navbar = () => {
               <li className="nav-item" data-bs-dismiss="offcanvas">
                 <a className="nav-link" href="#projects">
                   Projects
+                </a>
+              </li>
+              <li className="nav-item" data-bs-dismiss="offcanvas">
+                <a className="nav-link" href="#contact">
+                  Contact
                 </a>
               </li>
             </ul>

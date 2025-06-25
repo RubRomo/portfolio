@@ -12,7 +12,7 @@ const Hero = () => {
           <div className="col-12 col-md-6">
             <h1 className="">Hello ! I am Rubén</h1>
             <h2 className="">Web Developer</h2>
-            <p className="text-description">
+            <p className="">
               I am an appasionate full-stack web developer, always looking for
               new challenges.
             </p>

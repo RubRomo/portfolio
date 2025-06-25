@@ -1,7 +1,9 @@
 import contactMeLogo from "../assets/images/contact-logo.png";
+import "../styles/Contact.css";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Popup from "./Popup";
+import ShakeOnView from "./ShakeOnView";
 
 const Contact = () => {
   const nameRef = useRef<HTMLInputElement>(null);
@@ -56,11 +58,13 @@ const Contact = () => {
               chat!
             </p>
             <div className="text-center d-none d-md-block">
-              <img
-                className="text-center contact-logo"
-                src={contactMeLogo}
-                alt="Contact Image"
-              />
+              <ShakeOnView>
+                <img
+                  className="text-center contact-logo"
+                  src={contactMeLogo}
+                  alt="Contact Image"
+                />
+              </ShakeOnView>
             </div>
           </div>
           <div className="col-12 col-md-6">
