@@ -7,7 +7,7 @@ const About = () => {
       <div className="container">
         <div className="row d-flex align-content-center">
           <h2 className="text-center mb-4">About me</h2>
-          <p className="text-desc">
+          <p className="lead">
             I am a developer with 5 years of experience 👨‍💻, my favorite
             programming language is JavaScript 💻 but I also have experience in
             other languages such as Java ☕. I worked 2 years as an automation
