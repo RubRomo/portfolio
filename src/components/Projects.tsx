@@ -33,7 +33,7 @@ const Projects = () => {
             description="Demo React app - lets users search for meal recipes, view detailed ingredients, and discover new dishes."
             technologies={["react", "js", "ts"]}
             gitHubUrl="https://github.com/RubRomo/react-meal-finder"
-            liveDemoUrl="https://www.google.com"
+            liveDemoUrl="http://react-meal-finder.s3-website.us-east-2.amazonaws.com/"
           />
           <ProjectCard
             urlImg={portfolioImg}
