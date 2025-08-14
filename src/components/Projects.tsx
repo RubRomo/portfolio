@@ -41,7 +41,7 @@ const Projects = () => {
             description="Web developer portfolio using minimal 3d design and smooth animations."
             technologies={["react", "js", "ts", "bs", "css"]}
             gitHubUrl="https://github.com/RubRomo/portfolio"
-            liveDemoUrl="https://www.google.com"
+            liveDemoUrl="http://react-ruben-portfolio.s3-website.us-east-2.amazonaws.com/"
           />
           <ProjectCard
             urlImg={usersAPIImg}
