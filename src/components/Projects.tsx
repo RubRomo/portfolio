@@ -2,6 +2,7 @@ import "../styles/Projects.css";
 import mealFinderImg from "../assets/images/projects/meal-finder.png";
 import portfolioImg from "../assets/images/projects/portfolio.png";
 import usersAPIImg from "../assets/images/projects/springboot-api.png";
+import crudAIImg from "../assets/images/projects/crud-ai.png";
 
 const techIcons = {
   react:
@@ -16,6 +17,14 @@ const techIcons = {
   mysql:
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
   json: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg",
+  openai: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg",
+  aws: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+  supabase:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+  postgresql:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg",
+  chakraui:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chakraui/chakraui-original.svg",
 };
 
 const Projects = () => {
@@ -28,10 +37,18 @@ const Projects = () => {
         <h2 className="text-center pb-4">Projects</h2>
         <div className="row align-items-stretch g-4">
           <ProjectCard
+            urlImg={crudAIImg}
+            title="CRUD AI"
+            description="AI-powered CRUD application where can adds products using natural language and manage the actions easily."
+            technologies={["react", "ts", "openai", "aws"]}
+            gitHubUrl="https://github.com/RubRomo/crud-ai"
+            liveDemoUrl="http://react-crud-ai.s3-website-us-east-1.amazonaws.com/"
+          />
+          <ProjectCard
             urlImg={mealFinderImg}
             title="Meal Finder"
-            description="Demo React app - lets users search for meal recipes, view detailed ingredients, and discover new dishes."
-            technologies={["react", "js", "ts"]}
+            description="Demo React application - allow users search for meal recipes, view detailed ingredients, and discover new dishes."
+            technologies={["react", "ts", "chakraui", "aws"]}
             gitHubUrl="https://github.com/RubRomo/react-meal-finder"
             liveDemoUrl="http://react-meal-finder.s3-website.us-east-2.amazonaws.com/"
           />
@@ -39,7 +56,7 @@ const Projects = () => {
             urlImg={portfolioImg}
             title="Portfolio"
             description="Web developer portfolio using minimal 3d design and smooth animations."
-            technologies={["react", "js", "ts", "bs", "css"]}
+            technologies={["react", "ts", "bs", "css", "aws"]}
             gitHubUrl="https://github.com/RubRomo/portfolio"
             liveDemoUrl="http://react-ruben-portfolio.s3-website.us-east-2.amazonaws.com/"
           />
@@ -49,7 +66,6 @@ const Projects = () => {
             description="API Restful for user management it also provides JWT authentication based on role access control."
             technologies={["java", "spring", "mysql", "json"]}
             gitHubUrl="https://github.com/RubRomo/springboot-users-api"
-            liveDemoUrl="https://www.google.com"
           />
         </div>
       </div>
@@ -66,7 +82,12 @@ type TechName =
   | "java"
   | "spring"
   | "mysql"
-  | "json";
+  | "json"
+  | "openai"
+  | "aws"
+  | "supabase"
+  | "postgresql"
+  | "chakraui";
 
 type Props = {
   urlImg: string;
@@ -74,7 +95,7 @@ type Props = {
   description: string;
   technologies: TechName[];
   gitHubUrl: string;
-  liveDemoUrl: string;
+  liveDemoUrl?: string;
 };
 
 const ProjectCard = ({
@@ -85,7 +106,7 @@ const ProjectCard = ({
   gitHubUrl,
   liveDemoUrl,
 }: Props) => {
-  const techsToCheck: TechName[] = ["java", "mysql"];
+  const techsToCheck: TechName[] = ["java", "mysql", "openai"];
 
   return (
     <div className="col-md-4 d-flex">
@@ -126,14 +147,19 @@ const ProjectCard = ({
             >
               GitHub
             </a>
-            <a
-              className="text-decoration-none"
-              href={liveDemoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
+            {liveDemoUrl && (
+              <>
+                <div className="vr"></div>
+                <a
+                  className="text-decoration-none"
+                  href={liveDemoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              </>
+            )}
           </div>
         </div>
       </div>

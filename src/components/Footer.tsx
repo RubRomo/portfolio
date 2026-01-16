@@ -1,5 +1,7 @@
 import SocialIcon from "./SocialIcon";
 
+const currentYear = new Date().getFullYear();
+
 const Footer = () => {
   return (
     <footer className="bg-dark bg-gradient text-white text-center py-3">
@@ -23,7 +25,7 @@ const Footer = () => {
             />
           </div>
           <p className="lead">
-            <small>© 2025 Rubén Romo. All Rights Reserved.</small>
+            <small>© {currentYear} Rubén Romo. All Rights Reserved.</small>
           </p>
         </div>
       </div>

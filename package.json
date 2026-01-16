@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && aws s3 sync ./dist s3://react-ruben-portfolio --delete"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
