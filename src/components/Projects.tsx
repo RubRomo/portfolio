@@ -3,6 +3,7 @@ import mealFinderImg from "../assets/images/projects/meal-finder.png";
 import portfolioImg from "../assets/images/projects/portfolio.png";
 import usersAPIImg from "../assets/images/projects/springboot-api.png";
 import crudAIImg from "../assets/images/projects/crud-ai.png";
+import productsAPI from "../assets/images/projects/products-api.png";
 
 const techIcons = {
   react:
@@ -25,6 +26,7 @@ const techIcons = {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg",
   chakraui:
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chakraui/chakraui-original.svg",
+  node: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
 };
 
 const Projects = () => {
@@ -61,9 +63,17 @@ const Projects = () => {
             liveDemoUrl="http://react-ruben-portfolio.s3-website.us-east-2.amazonaws.com/"
           />
           <ProjectCard
+            urlImg={productsAPI}
+            title="Products API"
+            description="Products management RESTful API with Open AI function calling integration, hosted using serverless architecture."
+            technologies={["node", "postgresql", "mysql", "openai", "aws"]}
+            gitHubUrl="https://github.com/RubRomo/products-api"
+            liveDemoUrl="https://idbbqlv9pa.execute-api.us-east-1.amazonaws.com/products"
+          />
+          <ProjectCard
             urlImg={usersAPIImg}
-            title="REST API"
-            description="API Restful for user management it also provides JWT authentication based on role access control."
+            title="Users API"
+            description="RESTful user management system with JWT-secured authentication, granular role-based access control."
             technologies={["java", "spring", "mysql", "json"]}
             gitHubUrl="https://github.com/RubRomo/springboot-users-api"
           />
@@ -87,7 +97,8 @@ type TechName =
   | "aws"
   | "supabase"
   | "postgresql"
-  | "chakraui";
+  | "chakraui"
+  | "node";
 
 type Props = {
   urlImg: string;
@@ -106,7 +117,7 @@ const ProjectCard = ({
   gitHubUrl,
   liveDemoUrl,
 }: Props) => {
-  const techsToCheck: TechName[] = ["java", "mysql", "openai"];
+  const techsToCheck: TechName[] = ["java", "mysql", "openai", "node"];
 
   return (
     <div className="col-md-4 d-flex">
