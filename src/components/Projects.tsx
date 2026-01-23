@@ -44,7 +44,7 @@ const Projects = () => {
             description="AI-powered CRUD application where can adds products using natural language and manage the actions easily."
             technologies={["react", "ts", "openai", "aws"]}
             gitHubUrl="https://github.com/RubRomo/crud-ai"
-            liveDemoUrl="http://react-crud-ai.s3-website-us-east-1.amazonaws.com/"
+            liveDemoUrl="https://crud.rubenromo.dev/"
           />
           <ProjectCard
             urlImg={mealFinderImg}
@@ -60,7 +60,7 @@ const Projects = () => {
             description="Web developer portfolio using minimal 3d design and smooth animations."
             technologies={["react", "ts", "bs", "css", "aws"]}
             gitHubUrl="https://github.com/RubRomo/portfolio"
-            liveDemoUrl="http://react-ruben-portfolio.s3-website.us-east-2.amazonaws.com/"
+            liveDemoUrl="https://rubenromo.dev/"
           />
           <ProjectCard
             urlImg={productsAPI}
