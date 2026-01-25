@@ -1,7 +1,6 @@
 import contactMeLogo from "../assets/images/contact-logo.png";
 import "../styles/Contact.css";
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import Popup from "./Popup";
 import ShakeOnView from "./ShakeOnView";
 
@@ -19,31 +18,35 @@ const Contact = () => {
     event.preventDefault();
     setSending(true);
 
-    const params = {
-      name: nameRef.current?.value,
-      email: emailRef.current?.value,
-      message: messageRef.current?.value,
-    };
-
-    emailjs.init({
-      publicKey: "6E_HHmBg0jJafBGNH",
-    });
-
-    const serviceID = "service_i1o2uyg";
-    const templateID = "template_6qdsscf";
-
-    emailjs
-      .send(serviceID, templateID, params)
-      .then((res) => {
+    fetch("https://idbbqlv9pa.execute-api.us-east-1.amazonaws.com/email/send", {
+      method: "POST",
+      body: JSON.stringify({
+        name: nameRef.current?.value,
+        email: emailRef.current?.value,
+        message: messageRef.current?.value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        } else {
+          setShow(true);
+        }
+      })
+      .catch((error: any) => {
+        alert(
+          "There was an error sending the message. Please try again later.",
+        );
+      })
+      .finally(() => {
+        //Form Reset
         [nameRef, emailRef, messageRef].forEach((ref) => {
           if (ref.current) ref.current.value = "";
         });
         setSending(false);
-        setShow(true);
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log("Error" + err);
       });
   };
 
